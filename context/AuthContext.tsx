@@ -24,7 +24,7 @@ interface AuthState {
 
 // Define AuthContextType interface
 interface AuthContextType extends AuthState {
-  login: (email, password) => Promise<void>;
+  login: (email: string, password: string) => Promise<void>;
   signup: (userData: SignupUserData) => Promise<void>;
   logout: () => void;
 }
