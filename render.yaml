@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: nextjs-frontend
+    env: node
+    plan: free # Ensure it's on the free tier
+    buildCommand: "npm install && npm run build"
+    startCommand: "npm run start"
+    healthCheckPath: "/"
+    envVars:
+      - key: NODE_VERSION
+        value: "20" # Specify a recent LTS Node version

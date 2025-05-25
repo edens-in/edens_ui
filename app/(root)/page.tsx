@@ -1,7 +1,11 @@
 
 
+import SampleApiData from '@/components/SampleApiData/SampleApiData';
+
 export default function Home() {
   return (
-    <h1>Coming Soon</h1>
+    <main>
+      <SampleApiData />
+    </main>
   );
 }
