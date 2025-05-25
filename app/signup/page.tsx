@@ -18,7 +18,7 @@ const SignupPage = () => {
     }
   }, [isAuthenticated, router]);
 
-  const handleSubmit = async (event: FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const userData = { fullname, email, phone, password };
     await signup(userData);
