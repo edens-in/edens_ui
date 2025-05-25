@@ -41,7 +41,7 @@ const removeItemFromLocalStorage = (key: string): void => {
   }
 };
 
-export const loginUser = async (email, password): Promise<User | AuthError> => {
+export const loginUser = async (email: string, password: string): Promise<User | AuthError> => {
   const url = `${API_BASE_URL}/login?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`;
   try {
     const response = await fetch(url, {
@@ -67,7 +67,15 @@ export const loginUser = async (email, password): Promise<User | AuthError> => {
   }
 };
 
-export const signupUser = async (userData: { fullname, email, phone, password }): Promise<User | AuthError> => {
+// Define SignupUserData interface (consistent with AuthContext)
+interface SignupUserData {
+  fullname: string;
+  email: string;
+  phone: string;
+  password: string;
+}
+
+export const signupUser = async (userData: SignupUserData): Promise<User | AuthError> => {
   const url = `${API_BASE_URL}/signup`;
   try {
     const response = await fetch(url, {

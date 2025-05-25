@@ -16,7 +16,7 @@ const LoginPage = () => {
     }
   }, [isAuthenticated, router]);
 
-  const handleSubmit = async (event: FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     await login(email, password);
     // The useEffect above will handle redirection if login is successful
